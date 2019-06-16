@@ -21,7 +21,7 @@ $(function () {
         for(let j=0;j<=i;j++){
             index++;
             let obj = poke[index];
-            let lefts = 350-50*i+100*j , tops = 50 * i;
+            let lefts = 450-50*i+100*j , tops = 50 * i;
             $('<div>').addClass('poke')
                 .css({backgroundImage:`url(./imgs/${obj.number}${obj.color}.jpg)`})
                 .appendTo('.box')
@@ -41,7 +41,7 @@ $(function () {
             .data('number',obj.number)
             .attr('id',-2+'_'+-2)
             .delay(index*10)
-            .animate({left:0,top:480,opacity:1})
+            .animate({left:200,top:480,opacity:1})
     }
     box.on('click','.poke',function () {
         let _this = $(this);
@@ -60,7 +60,7 @@ $(function () {
         }else{
             let number1 = first.data('number'),number2 = _this.data('number');
             if(number1 + number2 === 14){
-                $('.active').animate({top: 0, left: 710,opacity: 0},function () {
+                $('.active').animate({top: 0, right: 200,opacity: 0},function () {
                     $(this).remove()
                 })
             }else{
@@ -80,7 +80,7 @@ $(function () {
     });
     let m = 0;
     $('.leftBtn').on('click',function () {
-        $('.right').first().css('zIndex',m++).animate({left:0},function () {
+        $('.right').first().css('zIndex',m++).animate({left:200},function () {
             $(this).removeClass('right').addClass('left')
         })
     })
